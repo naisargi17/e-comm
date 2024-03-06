@@ -1,0 +1,68 @@
+#app {
+    height: 100%;
+  }
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+  
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 50%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: fit;
+  }
+
+  /* // styles.module.css */
+.swiper-button-next {
+  color: whitesmoke; 
+  font-size:xx-large;
+  
+}
+
+.swiper-button-prev {
+  color: whitesmoke;
+  font-size:xx-large;
+}
+
+.swiper-pagination-bullet {
+  background-color: whitesmoke; /* Set the background color to your desired color */
+  opacity: 0.5; /* Adjust the opacity if needed */
+  width: 10px; /* Set the width of the bullet */
+  height: 10px; /* Set the height of the bullet */
+  margin: 0 5px; /* Adjust the margin between bullets as needed */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: slategray; /* Set the background color for the active bullet */
+  opacity: 1; /* Set the opacity for the active bullet */
+}
+
+  
