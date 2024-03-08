@@ -12,25 +12,26 @@ import { ShoppingCart ,User} from 'lucide-react';
 import Link from 'next/link';
 export default function NavbarC() {
   return (
+    <div className=''>
     <Navbar fluid rounded className='bg-gray-100'>
       
       <Navbar.Brand href="/">
       <ChefHat className="mr-3 h-6 sm:h-9" alt= "logo"/>
         {/* <a href='/'><ChefHat className="mr-3 h-6 sm:h-9" alt= "logo"/></a> */}
       
-        <span className="self-center whitespace-nowrap text-xl font-semibold ">Indian Kitchen Mart</span>
+        <span className="self-center whitespace-nowrap text-xl font-semibold md:text-2xl">Indian Kitchen Mart</span>
        
       </Navbar.Brand>
       
      
       
       <div className="flex  md:order-2">
-     <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
+     {/* <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
        <svg class="w-5 h-5" aria-hidden="true"  fill="none" viewBox="0 0 20 20">
          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
        </svg>
        <span class="sr-only">Search</span>
-     </button>
+     </button> */}
      <div class="relative hidden md:block">
        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
          <svg class="w-4 h-4 text-gray-500" aria-hidden="true"  fill="none" viewBox="0 0 20 20">
@@ -38,7 +39,7 @@ export default function NavbarC() {
          </svg>
          <span class="sr-only">Search icon</span>
        </div>
-       <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm md:w-40  text-gray-900 border border-gray-100 rounded-lg bg-gray-50 focus:ring-slate-500 focus:border-slate-500" placeholder="Search..."/>
+       <input type="text" id="search-navbar" class="block w-screen p-2 ps-10 text-sm md:w-40  text-gray-900 border border-gray-100 rounded-lg bg-gray-50 focus:ring-slate-500 focus:border-slate-500" placeholder="Search..."/>
    </div>
         <Link href='/addtocart'><span className='flex flex-row m-2'><ShoppingCart/></span></Link>
        
@@ -61,16 +62,18 @@ export default function NavbarC() {
         
         <Navbar.Toggle />
       </div>
-      <Navbar.Collapse className=' font-semibold text-lg hover:text-gray-300'>
-        <Navbar.Link href="/" className=' bg-gray-100 text-black hover:text-gray-400  text-lg'>
+      <Navbar.Collapse className=' font-semibold text-base hover:text-gray-300'>
+        <Navbar.Link href="/" className=' bg-gray-100 text-black hover:text-gray-400  text-lg  md:text-xl'>
           Home
         </Navbar.Link>
-        <Navbar.Link className='  bg-gray-100 hover:bg-gray-300 text-lg' href="/about">About</Navbar.Link>
-        <Navbar.Link className=' bg-gray-100 hover:bg-gray-300 text-lg' href="/category">Category</Navbar.Link>
-        <Navbar.Link className=' bg-gray-100 hover:bg-gray-300 text-lg' href="/contact">Contact</Navbar.Link>
+        
+        <Navbar.Link className=' bg-gray-100 hover:bg-gray-300 text-lg md:text-xl' href="/category">Category</Navbar.Link>
+        <Navbar.Link className=' bg-gray-100 hover:bg-gray-300 text-lg md:text-xl' href="/contact">Contact</Navbar.Link>
+        <Navbar.Link className='  bg-gray-100 hover:bg-gray-300 text-lg md:text-xl' href="/about">Our_Mission</Navbar.Link>
         
       </Navbar.Collapse>
     </Navbar>
+    </div>
   );
 }
 

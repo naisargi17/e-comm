@@ -10,9 +10,9 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-
  export default function FooterC() {
   return (
     <div className="">
-    <Footer container className='bg-gray-100'>
-      <div className="w-full h-">
-        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+    <Footer  className='bg-gray-100 '>
+      <div className="md:w-[100vw]">
+        <div className="grid  justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Footer.Brand
               href="/"
@@ -21,7 +21,7 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-
               name="Indian Kitchen Mart"
             />
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+          <div className="grid grid-cols-2  m-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
               <Footer.Title title="about" />
               <Footer.LinkGroup col>
@@ -40,9 +40,9 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-
           </div>
         </div>
         <Footer.Divider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
+        <div className=" flex items-center justify-between m-1">
           <Footer.Copyright href="#" by="Indian kitchen Mart™" year={2022} />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+          <div className="m-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon href="#" icon={BsFacebook} />
             <Footer.Icon href="#" icon={BsInstagram} />
             <Footer.Icon href="#" icon={BsTwitter} />

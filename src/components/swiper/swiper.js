@@ -16,7 +16,7 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
 export default function SwiperC() {
   return (
-    <div>
+    <div className=''>
      <Swiper
         cssMode={true}
         navigation={true}

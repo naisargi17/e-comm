@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className=" w-full h-full">
+    <html lang="en" className="">
       <body className={cn("relative h-full font-sans antialiased ",inter.className)}>
         <main className="relative flex flex-col  ">
         <Providers>
