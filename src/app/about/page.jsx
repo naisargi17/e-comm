@@ -1,3 +1,9 @@
+
+export const metadata ={
+  title:"About"
+  
+}
+
 const Page = () => {
     return (
         <div className="flex flex-col justify-center items-center py-4">

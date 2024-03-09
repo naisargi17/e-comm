@@ -1,5 +1,8 @@
 import Cards from "@/components/card/Card";
-
+export const metadata ={
+  title:"Contact Us"
+  
+}
 const Contactpage = () => {
   return (
     <div className="container  ">

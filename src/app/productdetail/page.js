@@ -4,7 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import { Rating, RatingAdvanced, RatingStar } from "flowbite-react";
 import Cards from "@/components/card/Card";
 import { useState } from "react";
-
+import Coursel from "@/components/homecoursel/coursel";
 
 const Product = () => {
   
@@ -347,10 +347,7 @@ const Product = () => {
       <div>
         <h1 className="text-xl font-bold"> Recommedation</h1>
         <div className="flex justify-start">
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
+          <Coursel/>
         </div>
       </div>
       </div>

@@ -1,21 +1,30 @@
-"use client"
+"use client";
 import React from "react";
-import { useState } from "react";
-import {useDispatch} from "react-redux"
-import { useRouter } from "next/navigation";
-import {createProduct} from '@/redux/silces/productSlice'
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const create = () => {
-    const router = useRouter();
-    const dispatch = useDispatch()
-    
-    const [product, setProduct] = useState({
+
+export const toastDisplayData = {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light", 
+}
+
+export default function CreateProduct() {
+    const [product, setProduct] = React.useState({
         name: "",
         description: "",
         price: "",
         category: "",
-        quantity: "",
+        stock: "",
     })
+    const [loading, setLoading] = React.useState(false);
+
     const categories = [
         "Laptop",
         "Footwear",
@@ -25,20 +34,32 @@ const create = () => {
         "Camera",
         "SmartPhones",
     ];
-    
-    const handleSubmit =(e) =>{
-        e.preventDefault();
-        console.log(product);
-        dispatch(createProduct(product));
-        router.push(`/productdisplay`)
 
+    const onCreate = async () => {
+        try {
+            setLoading(true);
+            const response = await axios.post("/api/admin/products/createproducts", product);
+            toast.success( response.data.message , toastDisplayData);
+            setProduct({
+                name: "",
+                description: "",
+                price: "",
+                category: "",
+                stock: "",
+            });
+        } catch (error) {
+            toast.error( error.message , toastDisplayData);
+        } finally {
+            setLoading(false);
+        }
     }
-    return ( 
+
+    return (
         <div className="flex flex-col items-center justify-center min-h-screen" >
             <div className="border-2 border-black rounded-lg p-8" >
-                <h1 className="py-4 text-[2vw]"> Create Product</h1>
+                <h1 className="py-4 text-[2vw]">{loading ? "Processing" : "Create Product"}</h1>
 
-                <form onSubmit={handleSubmit}>
+                <form>
                     <label htmlFor="username">Product name</label><br />
                     <input
                         className="p-2 mt-2 w-[25vw] border-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
@@ -75,22 +96,21 @@ const create = () => {
                             </option>
                         ))}
                     </select><br />
-                    <label htmlFor="stock">Quantity</label><br />
+                    <label htmlFor="stock">Stock</label><br />
                     <input
                         className="p-2 w-[25vw] mt-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
                         id="stock"
                         type="Number"
-                        value={product.quantity}
-                        onChange={(e) => setProduct({ ...product, quantity: e.target.value })}
+                        value={product.stock}
+                        onChange={(e) => setProduct({ ...product, stock: e.target.value })}
                         placeholder="Stock"
                     /><br />
                     <button
-                        type="submit"
+                        onClick={onCreate} type="button"
                         className="p-2 w-[25vw] bg-amber-400 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">Create</button>
                 </form>
             </div>
         </div>
-     );
+    )
+
 }
- 
-export default create;
