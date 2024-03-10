@@ -5,7 +5,7 @@ import SwiperC from "@/components/swiper/swiper";
 import Coursel from "@/components/homecoursel/coursel";
 export default function Home() {
   return (
-    <div className=" ">
+    <div className="">
       <div className="">
       <SwiperC/> 
       </div>
@@ -24,7 +24,7 @@ export default function Home() {
       <img className=" flex-row justify-center items-center w-screen h-68"src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202310/untitled_-_2023-09-26t192219-sixteen_nine.jpg?size=948:533"/>
       <h1 className="flex justify-center items-center text-3xl font-bold py-8">Festival Catalogs</h1>
       <div className="flex flex-wrap  justify-center  items-center m-4  ">
-        <Cards/>
+      <Coursel/>
         
       </div>
     </div>

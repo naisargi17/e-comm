@@ -7,72 +7,99 @@ import {
   Navbar,
   
 } from 'flowbite-react';
+import { useMediaQuery } from 'react-responsive';
 import { ChefHat } from 'lucide-react';
 import { ShoppingCart ,User} from 'lucide-react';
+import {Search} from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
+import { X } from 'lucide-react';
 export default function NavbarC() {
+  // const isLaptop = useMediaQuery({ minWidth: 1024 }); // Adjust the breakpoint as needed
+
+  const[visible,setVisible] = useState(false);
+  const handleClick = () =>{
+    setVisible(!visible);
+  }
+  const handleCloseClick =() =>{
+    setVisible(false);
+  }
+
+
   return (
-    <div className=''>
-    <Navbar fluid rounded className='bg-gray-100'>
+    <div className=''>{!visible && (<div><Navbar fluid rounded className='bg-gray-100 '>
       
-      <Navbar.Brand href="/">
-      <ChefHat className="mr-3 h-6 sm:h-9" alt= "logo"/>
-        {/* <a href='/'><ChefHat className="mr-3 h-6 sm:h-9" alt= "logo"/></a> */}
-      
-        <span className="self-center whitespace-nowrap text-xl font-semibold md:text-2xl">Indian Kitchen Mart</span>
-       
-      </Navbar.Brand>
-      
+    <Navbar.Brand href="/">
+    <ChefHat className="m-1" alt= "logo"/>
+      {/* <a href='/'><ChefHat className="mr-3 h-6 sm:h-9" alt= "logo"/></a> */}
+    
+      <span className="self-center whitespace-nowrap text-xl font-semibold  md:text-lg lg:text-2xl">Indian Kitchen Mart</span>
      
-      
-      <div className="flex  md:order-2">
-     {/* <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
-       <svg class="w-5 h-5" aria-hidden="true"  fill="none" viewBox="0 0 20 20">
+    </Navbar.Brand>
+    
+   
+    
+    <div className="flex  md:order-2">
+      <div className='flex mx-1 mt-2 md:m-2'><Search onClick={handleClick}/></div>
+    
+   <div class="relative hidden md:block">
+     {/* <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+       <svg class="w-4 h-4 text-gray-500" aria-hidden="true"  fill="none" viewBox="0 0 20 20">
          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
        </svg>
-       <span class="sr-only">Search</span>
-     </button> */}
-     <div class="relative hidden md:block">
-       <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-         <svg class="w-4 h-4 text-gray-500" aria-hidden="true"  fill="none" viewBox="0 0 20 20">
-           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-         </svg>
-         <span class="sr-only">Search icon</span>
-       </div>
-       <input type="text" id="search-navbar" class="block w-screen p-2 ps-10 text-sm md:w-40  text-gray-900 border border-gray-100 rounded-lg bg-gray-50 focus:ring-slate-500 focus:border-slate-500" placeholder="Search..."/>
-   </div>
-        <Link href='/addtocart'><span className='flex flex-row m-2'><ShoppingCart/></span></Link>
-       
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            // <Avatar alt="User settings" img="https://img.pikbest.com/png-images/qiantu/cute-panda-avatar-simple-yellow-black-and-white-icon-element_2689638.png!sw800" rounded />
-            <User/>
-          }
-        >
+       <span class="sr-only">Search icon</span>
+     </div>
+     <input type="text" id="search-navbar" class="block w-screen p-2 ps-10 text-sm md:w-40  text-gray-900 border border-gray-100 rounded-lg bg-gray-50 focus:ring-slate-500 focus:border-slate-500" placeholder="Search..."/> */}
+ </div>
+      <Link href='/addtocart'><span className='flex flex-row m-2'><ShoppingCart/></span></Link>
+     
+      <Dropdown
+        arrowIcon={false}
+        inline
+        label={
+          // <Avatar alt="User settings" img="https://img.pikbest.com/png-images/qiantu/cute-panda-avatar-simple-yellow-black-and-white-icon-element_2689638.png!sw800" rounded />
+          <User/>
+        }
+      >
+        
+        <Dropdown.Header>
+          <span className="block text-sm">user name</span>
+          <span className="block truncate text-sm font-medium">email123@gmail.com</span>
+        </Dropdown.Header>
+        <Dropdown.Item>Dashboard</Dropdown.Item>
+        <Dropdown.Item>SignOut</Dropdown.Item>
+      </Dropdown>
+      
+      <Navbar.Toggle />
+    </div>
+    <Navbar.Collapse className='font-semibold text-base'>
+      <Navbar.Link href="/" className=' bg-gray-100 text-black hover:text-gray-300 text-lg md:text-sm lg:text-xl'>
+        Home
+      </Navbar.Link>
+      
+      <Navbar.Link className=' bg-gray-100 hover:bg-gray-300 text-lg md:text-sm lg:text-xl' href="/category">Category</Navbar.Link>
+      <Navbar.Link className=' bg-gray-100 hover:bg-gray-300 text-lg  md:text-sm lg:text-xl' href="/contact">Contact</Navbar.Link>
+      <Navbar.Link className='  bg-gray-100 hover:bg-gray-300 text-lg md:text-sm lg:text-xl' href="/about">Our_Mission</Navbar.Link>
+      
+    </Navbar.Collapse>
+  </Navbar>
+      </div>)}
+      <div>
+    
+    </div>
+    <div className=''>
+      {visible && (
+        <div className=''>
+        <div className='flex justify-end'> <X onClick={handleCloseClick} /></div>
+        <div className='flex flex-col justify-center items-center'>
+          <h1 className='flex font-serif font-semibold text-3xl'> what your looking for</h1>
+          <p className='flex font-serif text-xl m-1 '> Enter the keyword ...</p>
           
-          <Dropdown.Header>
-            <span className="block text-sm">user name</span>
-            <span className="block truncate text-sm font-medium">email123@gmail.com</span>
-          </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>SignOut</Dropdown.Item>
-        </Dropdown>
-        
-        <Navbar.Toggle />
-      </div>
-      <Navbar.Collapse className=' font-semibold text-base hover:text-gray-300'>
-        <Navbar.Link href="/" className=' bg-gray-100 text-black hover:text-gray-400  text-lg  md:text-xl'>
-          Home
-        </Navbar.Link>
-        
-        <Navbar.Link className=' bg-gray-100 hover:bg-gray-300 text-lg md:text-xl' href="/category">Category</Navbar.Link>
-        <Navbar.Link className=' bg-gray-100 hover:bg-gray-300 text-lg md:text-xl' href="/contact">Contact</Navbar.Link>
-        <Navbar.Link className='  bg-gray-100 hover:bg-gray-300 text-lg md:text-xl' href="/about">Our_Mission</Navbar.Link>
-        
-      </Navbar.Collapse>
-    </Navbar>
+          <input type="text" id="search-navbar"  class="block w-screen text-xxl m-2 md:w-[90vw]  text-gray-900 border border-gray-100 rounded-lg bg-gray-50 focus:ring-slate-500 focus:border-slate-500" placeholder="Search..."/>
+        </div>
+        </div>
+      )}
+    </div>
     </div>
   );
 }

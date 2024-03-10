@@ -42,7 +42,7 @@ function Row({ item, deleteHandler }) {
             <Td className="p-4 border-b border-blue-gray-50">{item.stock}</Td>
             <Td className="p-4 border-b border-blue-gray-50">
                 <HStack justifyContent={"flex-start"}>
-                    <Link href={`/productdetail`}>
+                    <Link href={`/productdetail/${item._id}`}>
                         <Button className="border rounded-lg bg-green-700 p-2 border-white text-white">View details</Button>
                     </Link>
                     <Link href={`/updateproduct/${item._id}`}>

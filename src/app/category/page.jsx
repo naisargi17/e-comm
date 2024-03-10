@@ -82,9 +82,7 @@ const CategoryPage = () => {
         </div>
         <div className="flex flex-wrap">
           <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
+          
         </div>
       </div>
     </div>
