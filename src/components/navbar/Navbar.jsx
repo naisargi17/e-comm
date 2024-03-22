@@ -87,7 +87,7 @@ export default function NavbarC() {
                 className="  bg-gray-100 hover:bg-gray-300 text-lg md:text-sm lg:text-xl"
                 href="/about"
               >
-                Our_Mission
+                About
               </Navbar.Link>
             </Navbar.Collapse>
           </Navbar>
