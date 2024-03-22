@@ -1,5 +1,5 @@
 'use client'
-import { toastDisplayData } from '@/app/createproduct/page';
+import { toastDisplayData } from '@/app/admin/createproduct/page';
 import { Table, TableContainer, Td, TableCaption, Thead, Tr, Th, Tbody, HStack, Button, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import Link from "next/link";
 import { toast } from "react-toastify"
@@ -45,7 +45,7 @@ function Row({ item, deleteHandler }) {
                     <Link href={`/productdetail/${item._id}`}>
                         <Button className="border rounded-lg bg-green-700 p-2 border-white text-white">View details</Button>
                     </Link>
-                    <Link href={`/updateproduct/${item._id}`}>
+                    <Link href={`/admin/updateproduct/${item._id}`}>
                         <Button className="border rounded-lg bg-blue-600 p-2 border-white text-white">Update details</Button>
                     </Link>
                     <Button onClick={() => deleteHandler(item._id)} className="border rounded-lg p-3 bg-rose-700 border-white text-white">

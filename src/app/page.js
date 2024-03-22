@@ -3,14 +3,23 @@
 import Cards from "@/components/card/Card";
 import SwiperC from "@/components/swiper/swiper";
 import Coursel from "@/components/homecoursel/coursel";
+import FooterC from "@/components/footer/Footer";
+import NavbarC from "@/components/navbar/Navbar";
+export const metadata = {
+  title:"home",
+  description: "Indian Kitchen Mart is your one-stop destination for all your kitchen needs, offering a vibrant and diverse array of products that celebrate the rich culinary traditions of India.",
+};
 export default function Home() {
   return (
-    <div className="">
+    <div className=" bg-white">
+      <div className="">
+         <NavbarC/>
+      </div> 
       <div className="">
       <SwiperC/> 
       </div>
       
-      <div className="flex flex-col justify-center items-center m-2">
+      <div className="flex   flex-col justify-center items-center m-2">
         <h1 className=" flex justify-center items-center text-pretty font-bold text-3xl pt-9  font-serif"> HOME </h1>
       <div className=" flex justify-center items-center  w-[90vw]">
        <Coursel/>
@@ -26,6 +35,9 @@ export default function Home() {
       <div className="flex flex-wrap  justify-center  items-center m-4  ">
       <Coursel/>
         
+      </div>
+      <div>
+        <FooterC/>
       </div>
     </div>
   );

@@ -50,7 +50,7 @@ export default function Coursel() {
       };
   return (<div className="flex justify-center items-center m-3 w-[84vw] md:w-[90vw] md:m-3">
     <div className="slider-container w-[80vw] md:w-[98vw] md:m-1"><Slider {...settings} className="flex justify-center items-center m-2">{cards.map((item)=>(
-        <div key={item._id}><div className="bg-white h-[40]vw] w-[75vw] m-1 mb-1 md:mt-0 md:m-0 md:w-[24vw]  md:h-[24vw]  text-black rounded-xl">
+        <div key={item._id}><div className=" h-[40vw] w-[75vw] m-1 mb-1 md:mt-0 md:m-0 md:w-[23vw]  md:h-[20vw]  text-black rounded-xl">
             <div className=' flex justify-center items-center rounded-t-xl'>
             <img src="https://cdn.thewirecutter.com/wp-content/media/2023/09/pressure-cooker-2048px-9805.jpg" alt="Sunset in the mountains"/>
             </div>

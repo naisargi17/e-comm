@@ -4,7 +4,7 @@ import { TbFileDescription } from "react-icons/tb";
 import { MdStorage, MdOutlineSpellcheck, MdOutlineAttachMoney, MdAccountTree } from "react-icons/md";
 import axios from "axios";
 import { toast } from 'react-toastify';
-import { toastDisplayData } from "@/app/createproduct/page";
+import { toastDisplayData } from "@/app/admin/createproduct/page";
 import Spinner from "@/components/Spinner";
 
 const UpdateProduct = ({ params }) => {
@@ -66,7 +66,7 @@ const UpdateProduct = ({ params }) => {
 
         try {
             setLoading(true);
-            const response = await axios.post(`/api/admin/products/updateproducts/${params.id}`, data, config);
+            const response = await axios.put(`/api/admin/products/updateproducts/${params.id}`, data, config);
             toast.success(response.data.message, toastDisplayData);
         } catch (error) {
             toast.error(error.message, toastDisplayData);

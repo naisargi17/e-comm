@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 import DropdownC from "@/components/dropdown/Dropdown";
 import { useState } from "react";
 import categoryData from "@/context/categorydata"; // Corrected import and variable name
-
+import NavbarC from "@/components/navbar/Navbar";
+import FooterC from "@/components/footer/Footer";
 const CategoryPage = () => {
   const router = useRouter();
 
@@ -19,6 +20,9 @@ const CategoryPage = () => {
 
   return (
     <div className="flex flex-col justify-end">
+      <div>
+        <NavbarC/>
+        </div>
       <h1 className="flex justify-center items-center text-2xl py-4 font-semibold">
         Categories
       </h1>
@@ -85,6 +89,9 @@ const CategoryPage = () => {
           
         </div>
       </div>
+      <div>
+        <FooterC/>
+        </div>
     </div>
   );
 };
